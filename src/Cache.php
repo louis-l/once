@@ -12,7 +12,7 @@ class Cache
 
     protected bool $enabled = true;
 
-    public static function getInstance(): static
+    public static function getInstance(): self
     {
         return static::$cache ??= new static;
     }
@@ -32,12 +32,12 @@ class Cache
         return array_key_exists($backtraceHash, $this->values[$object]);
     }
 
-    public function get($object, string $backtraceHash): mixed
+    public function get($object, string $backtraceHash)
     {
         return $this->values[$object][$backtraceHash];
     }
 
-    public function set(object $object, string $backtraceHash, mixed $value): void
+    public function set(object $object, string $backtraceHash, $value): void
     {
         $cached = $this->values[$object] ?? [];
 

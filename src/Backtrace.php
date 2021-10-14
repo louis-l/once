@@ -30,7 +30,7 @@ class Backtrace
         return $this->trace['class'] ?? null;
     }
 
-    public function getObject(): mixed
+    public function getObject()
     {
         if ($this->globalFunction()) {
             return $this->zeroStack['file'];

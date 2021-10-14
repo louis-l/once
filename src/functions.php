@@ -3,7 +3,7 @@
 use Spatie\Once\Backtrace;
 use Spatie\Once\Cache;
 
-function once(callable $callback): mixed
+function once(callable $callback)
 {
     $trace = debug_backtrace(
         DEBUG_BACKTRACE_PROVIDE_OBJECT, 2
